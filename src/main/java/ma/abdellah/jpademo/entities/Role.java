@@ -14,6 +14,7 @@ public class Role {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String desc;
+    @Column(unique = true,length = 20)
     private String roleName;
     @ManyToMany(fetch = FetchType.EAGER)
     //pour specifie le nom de la table qui resulte a cause de la relation ManyToMany

@@ -13,6 +13,7 @@ import java.util.List;
 public class User {
     @Id
     private String userId;
+    @Column(name = "USER_NAME", unique=true,length = 20)
     private String username;
     private String password;
     //quand on choisi pour l'attribut fetch EAGER cela nous permet a chaque fois on charge un user on charge ave lui les roles
