@@ -47,4 +47,14 @@ public class UserServiceImpl implements UserService {
             role.getUsers().add(user);
         }
     }
+
+    @Override
+    public User authenticate(String userName, String password) {
+        User user=findUserByUserName(userName);
+        if(user==null) throw new RuntimeException("Bad credentials");
+        if(user.getPassword().equals(password)){
+            return user;
+        }
+        throw new RuntimeException("Bad credentials");
+    }
 }

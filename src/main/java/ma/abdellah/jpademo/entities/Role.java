@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,5 +20,6 @@ public class Role {
     @ManyToMany(fetch = FetchType.EAGER)
     //pour specifie le nom de la table qui resulte a cause de la relation ManyToMany
     //@JoinTable(name = "USERS_ROLES")
+    @ToString.Exclude
     private List<User> users=new ArrayList<>();
 }
